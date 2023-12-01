@@ -67,3 +67,40 @@ img {
 | **Normal** Flow      | The default arrangement of elements in HTML, where elements stack vertically one after another, following the order they appear in the HTML code.                                   |
 | **Floating** Flow    | Elements are removed from the normal flow and positioned relative to their parent element or the viewport. They can overlap with other elements, creating complex layouts.          |
 | **Positioning** Flow | Elements are positioned absolutely, relatively, or fixed to the viewport or their container elements. They are removed from the normal flow and can be placed anywhere on the page. |
+
+## Coding class
+
+Define variables in root, so they can be used by any element.
+
+```css
+:root {
+    --main-color = red;
+    --primary-color = black;
+    --secondary-color = black;
+    --font-family = Arial Helvetica sans-serif;
+}
+```
+
+This is how you call a variable.
+
+```css
+.title {
+  color: var(--primary-color);
+}
+```
+
+Best practice: Create a variables.css file where you store the variables and import them in the top of the styles.css file
+
+`@import './css/variables.css'`<br><br>
+
+| Type                   | Description                           |
+| ---------------------- | ------------------------------------- |
+| `.card`                | Class selector                        |
+| `.card_title`          | Select element inside the class card. |
+| `.card--primary-color` | Class modifier                        |
+
+```css
+.card--primary-color {
+  border-color: var(--primary-color);
+}
+```
