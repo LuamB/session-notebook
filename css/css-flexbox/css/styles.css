@@ -1,0 +1,60 @@
+:root {
+  --tshirt-order: -1;
+}
+
+.flex-container {
+  background-color: pink;
+  padding: 10px;
+  height: 500px;
+
+  display: flex;
+  gap: 20px; /* adding 20px only between items*/
+  justify-content: space-between; /* refers to main axis */
+  /*align-items: center;  refers to cross axis */
+  flex-wrap: wrap;
+  /*flex-direction: column; */ /* row is default; colum changes main axis to vertical */
+}
+
+.flex-items {
+  font-size: 40px;
+  background-color: beige;
+  padding: 10px;
+  /* width: 200px; */
+  flex-grow: 1; /* Every item takes the same space*/
+  min-width: 200px;
+  height: 200px;
+  /*margin: 20px; adding 20px around items*/
+}
+
+/* Select items */
+
+.flex-items:nth-child(1) {
+  background-color: blueviolet;
+  /*align-self: flex-start; /* Overwrites align-items specified in container*/
+}
+
+.flex-items:nth-child(2) {
+  background-color: yellow;
+  /*align-self: flex-end; /* Overwrites align-items specified in container*/
+}
+
+.flex-items:nth-child(3) {
+  flex-grow: 3; /* 3x bigger than other items */
+  /*align-self: flex-end; /* Overwrites align-items specified in container*/
+}
+
+.flex-items:nth-child(5) {
+  background-color: red;
+  /*order: var(
+    --tshirt-order
+  );  -1 moves element to 1. position; default is 0 for each element*/
+}
+
+/*.flex-items:nth-child(4) {
+  background-color: green;
+  order: -2; /* -1 moves element to 1. position; default is 0 for each element*/
+/*} */
+
+/* min-height: 100vh viewheight means all of the viewport; vh and vw adjust to the viewport*/
+
+/* .main>* selects all direct children of main */
